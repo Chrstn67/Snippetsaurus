@@ -1,0 +1,15 @@
+{
+  "name": "obsnippets",
+  "version": "1.0.0",
+  "description": "Plugin for creating and managing text and code snippets",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo \"Building the project...\" && exit 0"
+  },
+  "author": "Christian HUMBERT",
+  "license": "MIT",
+  "dependencies": {
+    "obsidian": "^1.7.2"
+  }
+}
