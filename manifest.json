@@ -1,7 +1,7 @@
 {
   "id": "obsnippets",
   "name": "Obsnippets",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minAppVersion": "0.12.0",
   "description": "Plugin for creating and managing text and code snippets",
   "author": "Christian Humbert",
