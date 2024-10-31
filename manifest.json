@@ -1,9 +1,9 @@
 {
   "id": "obsnippets",
-  "name": "Obsnippets",
-  "version": "1.0.1",
+  "name": "Snippetsaurus",
+  "version": "1.0.2",
   "minAppVersion": "0.12.0",
-  "description": "Plugin for creating and managing text and code snippets",
+  "description": "Create and managing text and code snippets.",
   "author": "Christian Humbert",
   "authorUrl": "https://github.com/Chrstn67/",
   "isDesktopOnly": false

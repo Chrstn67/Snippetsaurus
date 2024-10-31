@@ -27,7 +27,7 @@ class SnippetModal extends Modal {
     let language = this.snippet ? this.snippet.language : "";
 
     // Input pour le nom du snippet
-    new Setting(contentEl).setName("Nom du snippet").addText((text) =>
+    new Setting(contentEl).setName("Name of snippet").addText((text) =>
       text.setValue(name).onChange((value) => {
         name = value;
       })
@@ -144,7 +144,7 @@ class SnippetManagerModal extends Modal {
                 : snippet.content
             )
             .addButton((btn) =>
-              btn.setButtonText("Insérer").onClick(() => {
+              btn.setButtonText("Insert").onClick(() => {
                 this.insertSnippet(snippet);
                 this.close();
               })
@@ -206,7 +206,7 @@ module.exports = class ObsnippetsPlugin extends Plugin {
           if (snippet) {
             this.snippets.push(snippet);
             this.saveSnippets();
-            new Notice(`Snippet "${snippet.name}" créé !`);
+            new Notice(`Snippet "${snippet.name}" created !`);
           }
         }).open();
       },
@@ -228,31 +228,6 @@ module.exports = class ObsnippetsPlugin extends Plugin {
           this
         ).open();
       },
-    });
-
-    // Écouter les événements de changement dans l'éditeur actif
-    this.registerCodeMirror((cm) => {
-      cm.on("change", (cm, change) => {
-        let cursor = cm.getCursor();
-        let lineText = cm.getLine(cursor.line);
-        let lastWord = lineText.slice(0, cursor.ch).trim().split(" ").pop();
-
-        // Cherche si le dernier mot correspond à un snippet
-        let snippet = this.snippets.find((s) => s.name === lastWord);
-        if (snippet) {
-          let formattedSnippet = this.formatSnippet(snippet);
-          cm.replaceRange(
-            formattedSnippet,
-            { line: cursor.line, ch: cursor.ch - lastWord.length },
-            cursor
-          );
-
-          // Placer le curseur à la fin du snippet inséré
-          let endLine = cursor.line + formattedSnippet.split("\n").length - 1;
-          let endCh = cm.getLine(endLine).length;
-          cm.setCursor(endLine, endCh);
-        }
-      });
     });
   }
 
