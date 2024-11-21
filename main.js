@@ -215,7 +215,7 @@ module.exports = class ObsnippetsPlugin extends Plugin {
     // Commande pour ouvrir la gestion des snippets
     this.addCommand({
       id: "manage-snippets",
-      name: "Insert in note and Manage snippets",
+      name: "Insert in note and manage snippets",
       callback: () => {
         new SnippetManagerModal(
           this.app,
