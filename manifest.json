@@ -1,7 +1,7 @@
 {
   "id": "obsnippets",
   "name": "Snippetsaurus",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "minAppVersion": "0.12.0",
   "description": "Create and managing text and code snippets.",
   "author": "Christian Humbert",
